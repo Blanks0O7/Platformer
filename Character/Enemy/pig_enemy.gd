@@ -1,8 +1,9 @@
-extends CharacterBody2D
+extends RigidBody2D
 
+class_name pigClass
 
 const SPEED = 100
-const AREA_WIDTH = 170
+var AREA_WIDTH = 170
 
 var direction = 1
 var initial_position = Vector2()
@@ -10,6 +11,7 @@ var initial_position = Vector2()
 
 func _ready():
 	initial_position = position
+	AREA_WIDTH = 170  # Set default value for AREA_WIDTH here
 
 func _physics_process(delta):
 	# Move the enemy back and forth
@@ -21,4 +23,3 @@ func _physics_process(delta):
 	if abs(position.x - initial_position.x) > AREA_WIDTH / 2:
 		direction *= -1
 		animated_Sprite.flip_h = not animated_Sprite.flip_h
-

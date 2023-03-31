@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://booib7heahqbt"]
+
+[ext_resource type="Texture2D" uid="uid://drjlgbv25ijbj" path="res://art/Pixel_Adventure_1/Traps/Fan/On (24x8).png" id="1_mi4c5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo5lq"]
+atlas = ExtResource("1_mi4c5")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2v35"]
+atlas = ExtResource("1_mi4c5")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cl3d"]
+atlas = ExtResource("1_mi4c5")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s24u6"]
+atlas = ExtResource("1_mi4c5")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_noy4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo5lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2v35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cl3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s24u6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7g1d"]
+size = Vector2(20, 8)
+
+[node name="Helmet_copter" type="Area2D"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_noy4y")
+autoplay = "default"
+frame = 2
+frame_progress = 0.313388
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c7g1d")

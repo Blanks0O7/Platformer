@@ -286,7 +286,7 @@ animations = [{
 radius = 13.0
 height = 26.0
 
-[node name="Pig_Enemy" type="CharacterBody2D"]
+[node name="Pig_enemy" type="RigidBody2D"]
 script = ExtResource("1_xqnlu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

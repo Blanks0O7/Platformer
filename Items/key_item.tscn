@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrdbh"]
 size = Vector2(33, 42)
 
-[node name="Key_Item" type="Area2D"]
+[node name="Key_Item" type="Area2D" groups=["key"]]
 script = ExtResource("1_64uib")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,3 +15,5 @@ texture = ExtResource("1_5jbtc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_wrdbh")
+
+[connection signal="key_collected" from="." to="." method="_on_key_collected"]
